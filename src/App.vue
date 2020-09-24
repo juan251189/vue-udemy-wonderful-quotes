@@ -1,17 +1,26 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <div class="row">
+      <div class="col-10 offset-1">
+        <div class=" progressbar">
+            <div class="progress">
+            </div>
+        </div>
+
+      </div>
+    </div>
+
+    <app-quotes></app-quotes>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Quotes from './components/Quotes.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    appQuotes:Quotes
   }
 }
 </script>
@@ -25,4 +34,18 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
+
+.progressbar{
+
+  border: 1px lightgrey solid;
+  height: 30px;
+  border-radius: 10px;
+  z-index: -2;
+
+}
+.progress{position: absolute;
+  height: 29px;
+  border-radius: 10px;
+
+  }
 </style>
