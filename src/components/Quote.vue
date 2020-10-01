@@ -4,7 +4,7 @@
 
   <div class="row">
     <div class="col-sm-6">
-      <div v-for="(quote,i) in quotes" :key="i" class="quote">
+      <div v-for="(quote,i) in quotes" :key="i" class="quote" @click="removeQuote(i)" >
       {{quote.content}}
       <p class="author"> - {{quote.author}}</p>
     </div>
@@ -17,7 +17,14 @@
 </template>
 <script>
  export default{
-    props: ['quotes']
+    props: ['quotes'],
+    methods: {
+      removeQuote(i){
+        this.$emit('removeQuote',i);
+
+      }
+    }
+
  }
 </script>
 <style>
